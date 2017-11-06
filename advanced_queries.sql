@@ -2,15 +2,15 @@
 -- For all of these queries, you SHOULD NOT use an id # in a WHERE clause
 
 -- Find all fields (book and author related) for all books written by George R.R. Martin.
-SELECT * FROM books JOIN authors ON (books.author_id = authors.id) WHERE name = 'George R.R. Martin';
+SELECT books.id, title, publication_date, author_id, name, nationality, birth_year FROM books JOIN authors ON (books.author_id = authors.id) WHERE name = 'George R.R. Martin';
 -- Find all fields (book and author related) for all books written by Milan Kundera.
-SELECT * FROM books JOIN authors ON (books.author_id = authors.id) WHERE name = 'Milan Kundera';
+SELECT books.id, title, publication_date, author_id, name, nationality, birth_year FROM books JOIN authors ON (books.author_id = authors.id) WHERE name = 'Milan Kundera';
 -- Find all books written by an author from China or the UK.
-SELECT * FROM books JOIN authors ON (books.author_id = authors.id) WHERE nationality = 'China' OR nationality = 'United Kingdom';
+SELECT books.id, title, publication_date, author_id, name, nationality, birth_year FROM books JOIN authors ON (books.author_id = authors.id) WHERE nationality = 'China' OR nationality = 'United Kingdom';
 -- Find out how many books Albert Camus wrote.
-SELECT * FROM books JOIN authors ON (books.author_id = authors.id) WHERE name = 'Albert Camus';
+SELECT books.id, title, publication_date, author_id, name, nationality, birth_year FROM books JOIN authors ON (books.author_id = authors.id) WHERE name = 'Albert Camus';
 -- Find out how many books written before 1980 were by authors not from the US.
-SELECT * FROM books JOIN authors ON (books.author_id = authors.id) WHERE publication_date < 1980 AND nationality != 'United States of America';
+SELECT books.id, title, publication_date, author_id, name, nationality, birth_year FROM books JOIN authors ON (books.author_id = authors.id) WHERE publication_date < 1980 AND nationality != 'United States of America';
 -- For these last two, you should not need a JOIN.
 
 -- Find all authors whose names start with 'J'.
